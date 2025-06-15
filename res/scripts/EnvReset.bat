@@ -1,4 +1,4 @@
-:: Copyright Glen Knowles 2016 - 2021.
+:: Copyright Glen Knowles 2016 - 2025.
 :: Distributed under the Boost Software License, Version 1.0.
 @echo off
 if /i "%1" equ "" goto :help
@@ -12,6 +12,7 @@ if /i "%1" equ "restore" goto :restore
 echo %~nx0: unknown operation '%1'
 goto :eof
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :help
 echo EnvReset version 2019.1
 echo.
@@ -31,12 +32,13 @@ echo    EnvReset snapshot
 echo    VsDevCmd
 echo    EnvReset commit
 echo    ... do stuff
-echo    EnvReset
+echo    EnvReset restore
 echo.
 echo In the above example, if VsDevCmd had failed you would call
 echo "EnvReset rollback" to clean up and not save the undo rules.
 goto :eof
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :snapshot
 call :rollback
 for /f "tokens=1,2 delims==" %%v in ('set') do (
@@ -50,6 +52,7 @@ goto :eof
 set "EnvResetSnap_%~1=%~2"
 goto :eof
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :commit
 for /f "tokens=1,2 delims==" %%v in ('set') do (
     call :update_undo "%%v" "%%w"
@@ -98,6 +101,7 @@ if "%EnvResetValue%" neq "%~3" (
 )
 goto :eof
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :rollback
 set EnvResetSnap_EnvResetSnap_=;
 for /f "tokens=1,2 delims==" %%v in ('set EnvResetSnap_') do (
@@ -107,6 +111,7 @@ set EnvResetName=
 set EnvResetValue=
 goto :eof
 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Restore from the committed snapshot
 ::
 :: - remove all variables listed in EnvResetDeleteMe

@@ -37,12 +37,14 @@ C:>vs15
 Unable to find "Visual Studio 2017"
 ~~~
 
-## vs* files
-- vs15.bat - Calls VsCmd to switch to VS2017.
-- vs16.bat - Calls VsCmd to switch to VS2019.
-- vs17.bat - Calls VsCmd to switch to VS2022.
-- vs17pre.bat - Calls VsCmd to switch to VS2022 Preview or VS2022 if the
-  preview is not installed.
+## vs* scripts
+
+| Script      | Action                                   |
+| :---------- | :--------------------------------------- |
+| vs15.bat    | Calls VsCmd to switch to VS2017.         |
+| vs16.bat    | Calls VsCmd to switch to VS2019.         |
+| vs17.bat    | Calls VsCmd to switch to VS2022.         |
+| vs17pre.bat | Calls VsCmd to switch to VS2022 Preview. |
 
 The vs*.bat files are extremely simple, make more as needed.
 
@@ -60,11 +62,14 @@ saved undo rules, if any. Undo rules are saved as EnvReset* environment
 variables.
 
 Additional commands exist to generate undo rules:
-   restore         Apply and remove undo rules if defined.
-   snapshot        Mark before state.
-   commit          Saves diff from current to before as undo rules.
-   rollback        Clear before state markers.
-   ?, /?, or help  Show this message and exit.
+
+| Command        | Description                                      |
+| :------------- | :----------------------------------------------- |
+| restore        | Apply and remove undo rules if present.          |
+| snapshot       | Mark before state.                               |
+| commit         | Saves diff from current to before as undo rules. |
+| rollback       | Clear before state markers.                      |
+| ?, /?, or help | Show this message and exit.                      |
 
 Example usage:
 

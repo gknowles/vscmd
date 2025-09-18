@@ -1,7 +1,7 @@
 :: Copyright Glen Knowles 2021 - 2025.
 :: Distributed under the Boost Software License, Version 1.0.
 
-:: VsCmd version 2025.1
+:: VsCmd version 2025.2
 @echo off
 call EnvReset restore
 call EnvReset snapshot
@@ -28,7 +28,7 @@ set vscmd.devcmd=%vscmd.install%\Common7\Tools\VsDevCmd.bat
 
 :next_arg
 if "%~2" == "-prerelease" (
-    if %vscmd.preview% == 0 (
+    if "%vscmd.preview%" == "0" (
         set vscmd.devcmd=
     )
 )

@@ -10,6 +10,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com) and this
 project adheres to [Semantic Versioning](http://semver.org).
 
+## vscmd 1.2.0 (2025-09-17)
+- Fixed - Error when VS version not found
+- Added - vs18pre.bat for Visual Studio 2026 Insiders edition
+
 ## vscmd 1.1.0 (2025-06-12)
 - Added - Include VS Build Tools installations in version search
 

@@ -10,3 +10,4 @@
 # res/scripts/vs16.bat
 # res/scripts/vs17.bat
 # res/scripts/vs17pre.bat
+# res/scripts/vs18pre.bat

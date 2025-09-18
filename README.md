@@ -39,16 +39,17 @@ Unable to find "Visual Studio 2017"
 
 ## vs* scripts
 
-| Script      | Action                                   |
-| :---------- | :--------------------------------------- |
-| vs15.bat    | Calls VsCmd to switch to VS2017.         |
-| vs16.bat    | Calls VsCmd to switch to VS2019.         |
-| vs17.bat    | Calls VsCmd to switch to VS2022.         |
-| vs17pre.bat | Calls VsCmd to switch to VS2022 Preview. |
+| Script      | Action                                    |
+| :---------- | :---------------------------------------- |
+| vs15.bat    | Calls VsCmd to switch to VS2017.          |
+| vs16.bat    | Calls VsCmd to switch to VS2019.          |
+| vs17.bat    | Calls VsCmd to switch to VS2022.          |
+| vs17pre.bat | Calls VsCmd to switch to VS2022 Preview.  |
+| vs18pre.bat | Calls VsCmd to switch to VS2026 Insiders. |
 
 The vs*.bat files are extremely simple, make more as needed.
 
-# VsCmd.bat
+# VsCmd.bat version 2025.2
 Find Visual Studio version and switch environment to it.
 
 Uses [vswhere.exe](https://github.com/microsoft/vswhere) to find the install
